@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation System</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        form { display: grid; grid-template-columns: 150px 1fr; gap: 1em; }
+        label { text-align: right; }
+        input { padding: 0.5em; }
+        button { grid-column: 2; padding: 0.5em; }
+    </style>
+</head>
+<body>
+    <h1>Crop Recommendation System</h1>
+    <form action="/predict" method="post">
+        <label for="N">Nitrogen (N):</label>
+        <input type="number" step="any" id="N" name="N" required>
+        
+        <label for="P">Phosphorus (P):</label>
+        <input type="number" step="any" id="P" name="P" required>
+        
+        <label for="K">Potassium (K):</label>
+        <input type="number" step="any" id="K" name="K" required>
+        
+        <label for="temperature">Temperature (°C):</label>
+        <input type="number" step="any" id="temperature" name="temperature" required>
+        
+        <label for="humidity">Humidity (%):</label>
+        <input type="number" step="any" id="humidity" name="humidity" required>
+        
+        <label for="ph">pH:</label>
+        <input type="number" step="any" id="ph" name="ph" required>
+        
+        <label for="rainfall">Rainfall (mm):</label>
+        <input type="number" step="any" id="rainfall" name="rainfall" required>
+        
+        <button type="submit">Get Recommendation</button>
+    </form>
+    <hr>
+    <p>
+        <a href="/predict-example">Test with an example</a>
+    </p>
+</body>
+</html>

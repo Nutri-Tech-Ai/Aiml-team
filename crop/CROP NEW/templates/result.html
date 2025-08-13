@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendations</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Top 5 Crop Recommendations</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Crop</th>
+                <th>Estimated Profit</th>
+                <th>Estimated Yield</th>
+                <th>Best Season</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for crop in recommendations %}
+            <tr>
+                <td>{{ crop.crop }}</td>
+                <td>{{ crop.profit }}</td>
+                <td>{{ crop.yield }}</td>
+                <td>{{ crop.season }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
